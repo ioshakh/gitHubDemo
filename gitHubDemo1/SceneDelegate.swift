@@ -19,6 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
     }
+    
+    func callHomeViewController() {
+        let cv  = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        
+        if window.self == nil {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        
+        self.window?.rootViewController = cv
+        self.window?.makeKeyAndVisible()
+        
+    }
+    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
